@@ -106,7 +106,8 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
     int result;
     switch (mRotation) {
       case 0:
-        result = FirebaseVisionImageMetadata.ROTATION_0;
+        // result = FirebaseVisionImageMetadata.ROTATION_0;
+        result = FirebaseVisionImageMetadata.ROTATION_270;
         break;
       case 90:
         result = FirebaseVisionImageMetadata.ROTATION_90;
