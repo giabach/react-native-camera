@@ -67,7 +67,6 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
 
   @Override
   protected Void doInBackground(Void... ignored) {
-    return null;
     if (isCancelled() || mDelegate == null) {
       return null;
     }
