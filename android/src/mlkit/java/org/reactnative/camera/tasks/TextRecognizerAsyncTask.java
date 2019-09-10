@@ -67,6 +67,7 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
 
   @Override
   protected Void doInBackground(Void... ignored) {
+    return null;
     if (isCancelled() || mDelegate == null) {
       return null;
     }
@@ -121,7 +122,6 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Vo
         result = FirebaseVisionImageMetadata.ROTATION_0;
         Log.e(TAG, "Bad rotation value: " + mRotation);
     }
-    result = FirebaseVisionImageMetadata.ROTATION_0;
     return result;
   }
 
