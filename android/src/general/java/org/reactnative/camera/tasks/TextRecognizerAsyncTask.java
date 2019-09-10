@@ -68,7 +68,13 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Sp
       return null;
     }
     mTextRecognizer = new TextRecognizer.Builder(mThemedReactContext).build();
-    RNFrame frame = RNFrameFactory.buildFrame(mImageData, mWidth, mHeight, mRotation);
+    RNFrame frame;
+    if (mRotation == 0) {
+      frame = RNFrameFactory.buildFrame(mImageData, mHeight, mWidth, 90);
+    } else {
+      frame = RNFrameFactory.buildFrame(mImageData, mWidth, mHeight, mRotation);
+    }
+    
     return mTextRecognizer.detect(frame.getFrame());
   }
 
