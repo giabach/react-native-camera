@@ -64,14 +64,13 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Sp
 
   @Override
   protected SparseArray<TextBlock> doInBackground(Void... ignored) {
-    mDelegate = null;
     if (isCancelled() || mDelegate == null) {
       return null;
     }
     mTextRecognizer = new TextRecognizer.Builder(mThemedReactContext).build();
     RNFrame frame;
     if (mRotation == 0) {
-      frame = RNFrameFactory.buildFrame(mImageData, mHeight, mWidth, 90);
+      frame = RNFrameFactory.buildFrame(mImageData, mWidth, mHeight, 90);
     } else {
       frame = RNFrameFactory.buildFrame(mImageData, mWidth, mHeight, mRotation);
     }
