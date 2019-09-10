@@ -64,7 +64,7 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Sp
 
   @Override
   protected SparseArray<TextBlock> doInBackground(Void... ignored) {
-    return null;
+    mDelegate = null;
     if (isCancelled() || mDelegate == null) {
       return null;
     }
