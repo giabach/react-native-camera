@@ -1,5 +1,7 @@
 package org.reactnative.camera.tasks;
 
+import android.util.Log;
+
 import android.util.SparseArray;
 
 import com.facebook.react.bridge.Arguments;
@@ -18,6 +20,8 @@ import org.reactnative.camera.utils.ImageDimensions;
 import org.reactnative.facedetector.FaceDetectorUtils;
 import org.reactnative.frame.RNFrame;
 import org.reactnative.frame.RNFrameFactory;
+
+private String TAG = "RNCamera";
 
 
 public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, SparseArray<TextBlock>> {
@@ -68,6 +72,7 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Sp
       return null;
     }
     mTextRecognizer = new TextRecognizer.Builder(mThemedReactContext).build();
+    Log.v(TAG, "mWidth:"+mWidth+"; mHeight:"+mHeight+"; mRotation:"+mRotation);
     RNFrame frame;
     if (mRotation == 0) {
       frame = RNFrameFactory.buildFrame(mImageData, mWidth, mHeight, 90);
