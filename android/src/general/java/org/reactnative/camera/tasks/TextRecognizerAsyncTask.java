@@ -21,9 +21,6 @@ import org.reactnative.facedetector.FaceDetectorUtils;
 import org.reactnative.frame.RNFrame;
 import org.reactnative.frame.RNFrameFactory;
 
-private String TAG = "RNCamera";
-
-
 public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, SparseArray<TextBlock>> {
 
   private TextRecognizerAsyncTaskDelegate mDelegate;
@@ -38,6 +35,7 @@ public class TextRecognizerAsyncTask extends android.os.AsyncTask<Void, Void, Sp
   private double mScaleY;
   private int mPaddingLeft;
   private int mPaddingTop;
+  private String TAG = "RNCamera";
 
   public TextRecognizerAsyncTask(
           TextRecognizerAsyncTaskDelegate delegate,
